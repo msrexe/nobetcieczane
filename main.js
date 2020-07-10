@@ -44,7 +44,7 @@ function jsonload() {
         return response.json();
     }).then(function(eczaneler){
         getElement("text").innerHTML = ""
-        getElement("text").innerHTML += '<h1 class="w3-panel">Nöbetçi Eczaneler : </h1>'
+        getElement("text").innerHTML += '<h2 class="w3-panel">Nöbetçi Eczaneler : </h2>'
         listdiv.innerHTML = ""
         eczaneler.forEach(eczane => {
             listdiv.innerHTML += createElement(eczane["name"],eczane["address"],eczane["phone"])
