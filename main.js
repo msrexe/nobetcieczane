@@ -43,6 +43,8 @@ function jsonload() {
     fetch(proxyUrl + url).then(function(response){
         return response.json();
     }).then(function(eczaneler){
+        getElement("text").innerHTML = ""
+        getElement("text").innerHTML += '<h1 class="w3-panel">Nöbetçi Eczaneler : </h1>'
         listdiv.innerHTML = ""
         eczaneler.forEach(eczane => {
             listdiv.innerHTML += createElement(eczane["name"],eczane["address"],eczane["phone"])
