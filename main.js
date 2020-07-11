@@ -1,8 +1,8 @@
 let getElement= (id) => document.getElementById(id)
 let getValue = (id) => getElement(id).value
 
-function createElement(isim,adres,tel) {
-    return `<button onclick="myFunc('`+isim+`')" id="eczaneisim" class="w3-btn w3-block w3-border w3-black"><b>`+isim+`</b>     (Ayrıntı için tıklayınız..)</button><div id="`+isim+`" class="w3-hide w3-dark-grey w3-center"><p><b>Adres</b> : `+ adres +`</p><p><b>Telefon</b> : `+tel+`</p></div><br>`
+function createElement(isim,adres,sehir,tel) {
+    return `<button onclick="myFunc('`+isim+`')" id="eczaneisim" class="w3-btn w3-block w3-border w3-black"> <b> `+isim+`</b>     (Ayrıntı için tıklayınız..)</button><div id="`+isim+`" class="w3-hide w3-dark-grey w3-center"><p><b>Adres</b> : `+ adres +`</p><p><b>Telefon</b> : `+tel+`</p><a href="https://www.google.com/search?q=`+ isim +`,+`+sehir+`"><b>Eczaneyi Google'da Ara</b></a></div><br>`
 }
 function pti(elm) {
     let il = getValue(elm)
@@ -47,7 +47,7 @@ function jsonload() {
         getElement("text").innerHTML += '<h2 class="w3-panel">Nöbetçi Eczaneler : </h2>'
         listdiv.innerHTML = ""
         eczaneler.forEach(eczane => {
-            listdiv.innerHTML += createElement(eczane["name"],eczane["address"],eczane["phone"])
+            listdiv.innerHTML += createElement(eczane["name"],eczane["address"],eczane["town"],eczane["phone"])
         });
         
     })
