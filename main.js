@@ -2,7 +2,7 @@ let getElement= (id) => document.getElementById(id)
 let getValue = (id) => getElement(id).value
 
 function createElement(isim,adres,tel) {
-    return `<button onclick="myFunc('`+isim+`')" id="eczaneisim" class="w3-btn w3-block w3-teal">`+isim+`     (Ayrıntı için tıklayınız..)</button><div id="`+isim+`" class="w3-hide w3-dark-grey w3-center"><p>Adres : `+ adres +`</p><p>Telefon : `+tel+`</p></div>`
+    return `<button onclick="myFunc('`+isim+`')" id="eczaneisim" class="w3-btn w3-block w3-border w3-black"><b>`+isim+`</b>     (Ayrıntı için tıklayınız..)</button><div id="`+isim+`" class="w3-hide w3-dark-grey w3-center"><p><b>Adres</b> : `+ adres +`</p><p><b>Telefon</b> : `+tel+`</p></div>`
 }
 function pti(elm) {
     let il = getValue(elm)
