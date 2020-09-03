@@ -21,11 +21,14 @@
                 </div>
 
         <div class="w3-margin w3-center">
-            <button  style="width: 60%" class="w3-button w3-large w3-black w3-round w3-border" onclick="bul()">BUL</button>
+            <button  style="width: 60%" class="w3-button w3-large w3-black w3-round w3-border" onclick="bul()">
+              <div id="loading" class="loader"></div>
+              <span id="loaded-text">BUL</span>
+            </button>
         </div>
 
         <div id="text"></div>
-        <div id="liste" class="w3-panel w3-margin">               
+        <div id="liste" class="w3-panel w3-margin">
         </div>
         <footer class=" w3-margin-top w3-container">
             <div class="w3-center" >
@@ -51,3 +54,27 @@
     }
     </script>
 </html>
+<style>
+.loader {
+  display: none;
+  margin: 0 auto;
+  border: 5px solid #272727;
+  border-radius: 50%;
+  border-top: 5px solid #ffffff;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+</style>
