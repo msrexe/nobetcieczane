@@ -24,7 +24,7 @@ function str_format(name) {
 }
 function bul() {
     jsonload()
-    
+
 }
 function jsonload() {
     let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
@@ -39,8 +39,10 @@ function jsonload() {
         method: 'GET',
         mode: 'no-cors',
         cache: 'default'
-    } 
+    }
+    loading(true);
     fetch(proxyUrl + url).then(function(response){
+        loading(false);
         return response.json();
     }).then(function(eczaneler){
         getElement("text").innerHTML = ""
@@ -49,6 +51,16 @@ function jsonload() {
         eczaneler.forEach(eczane => {
             listdiv.innerHTML += createElement(eczane["name"],eczane["address"],eczane["town"],eczane["phone"])
         });
-        
+
     })
+}
+
+function loading(loading){
+  if (loading) {
+    getElement('loading').style.display = 'block';
+    getElement('loaded-text').style.display = 'none';
+  }else{
+    getElement('loading').style.display = 'none';
+    getElement('loaded-text').style.display = 'block';
+  }
 }
